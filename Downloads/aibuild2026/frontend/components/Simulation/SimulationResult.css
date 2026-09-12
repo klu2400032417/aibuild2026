@@ -1,0 +1,123 @@
+.simulation-empty {
+  text-align: center;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.simulation-results-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.simulation-scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.scenario-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.best-scenario-glow {
+  border-color: var(--success) !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.15), var(--shadow-md) !important;
+  background: rgba(16, 185, 129, 0.02) !important;
+}
+
+.best-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.scenario-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 10px;
+}
+
+.scenario-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.sc-metric {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sc-m-title {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sc-m-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.scenario-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.scenario-score-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.score-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: var(--font-display);
+}
+
+/* Stockout Risks color mapping */
+.risk-low {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.risk-medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning);
+}
+
+.risk-high {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}

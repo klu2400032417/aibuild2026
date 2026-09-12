@@ -1,0 +1,141 @@
+Track 4 · NetworkIQ
+
+Inventory Optimization & Placement Across the Fulfilment Network
+
+CATEGORY
+
+Supply Chain & Inventory Planning
+
+Core AI focus: Network-level inventory optimizer built as cooperating, negotiating agents
+
+HOW THIS TRACK GETS SCORED
+
+Dimension
+
+Weight
+
+Business Impact
+
+20%
+
+AI Innovation & Depth
+
+20%
+
+Technical Excellence
+
+20%
+
+Enterprise Architecture & Integration
+
+15%
+
+User Experience
+
+10%
+
+Scalability, Security & Cost
+
+10%
+
+Presentation
+
+5%
+
+THE PROBLEM
+
+A modern Indian retailer runs a mixed fulfilment network — warehouses, city fulfilment centres, quick-commerce dark stores, and seller-owned inventory. The same SKU is routinely in the wrong place: a fast-moving essential sits two days away in a warehouse, while a fast-delivery store's scarce shelf space holds slow movers that could ship from anywhere. Placement is decided location-by-location by different teams optimizing different things off weekly reports — nobody holds a network-level view balancing holding cost, transfer cost, and the sales lost every time a customer sees "not deliverable."
+
+YOUR MISSION
+
+Build an AI system that decides how much of each SKU to hold at every location in a retail network, and recommends the transfers to rebalance stock between locations — balancing demand, capacity, transfer cost, and delivery-speed promise. Split the reasoning across cooperating agents grouped by whatever real dimension your data supports — region, category, or store — that negotiate toward a network-optimal plan a human planner can approve or override.
+
+SUCCESS LOOKS LIKE
+
+Better pincode-level product availability and a bigger serviceable catalog
+
+Lower total holding + transfer cost at the same service level
+
+Better in-stock rate at your fastest-turnover locations for high-velocity SKUs
+
+Less slow-moving inventory occupying your best-performing locations
+
+WHAT YOU'LL WORK WITH — AND THE RULES THAT COME WITH IT
+
+DATA YOUR SOLUTION SHOULD USE
+
+SKU-level demand by store/location
+
+Location capacity and cost profiles
+
+Historical inter-location transfer costs and lead times
+
+Current inventory positions across the network
+
+Product attributes (perishability, size, velocity class, category)
+
+GUARDRAILS YOU MUST RESPECT
+
+Auditability: every placement and transfer recommendation must show its demand basis and cost trade-off for planner approval.
+
+Cost Guardrail: never recommend a transfer that costs more than the margin it unlocks; report cost-per-recommendation.
+
+Tiered Reasoning: match compute to value — cheap models for the long tail of C-class SKUs, expensive reasoning reserved for high-value A-class SKUs.
+
+Capacity Feasibility: respect physical capacity, cold-chain constraints, and category restrictions — an infeasible plan scores zero.
+
+Human-in-the-loop: bulk transfer plans above a value threshold require planner sign-off before execution.
+
+SYSTEMS & APIS YOUR SOLUTION WOULD INTEGRATE WITH
+
+Warehouse Management System (WMS)
+
+Demand Planning System
+
+Transportation Management System (transfer cost)
+
+This is what a full production deployment would integrate with — your hackathon MVP doesn't need any of it. Work directly from Indian Store Data below; 
+
+GENERAL BUILD PRINCIPLES (APPLIES TO EVERY TRACK)
+
+Prefer several specialized, cooperating agents over one giant mega-prompt.
+
+Use cheap/fast models for routine decisions and save expensive reasoning for the high-stakes ones — report a rough cost-per-decision.
+
+Where practical, show that a smaller open-source model, RAG, or a classical solver could replace constant calls to an expensive commercial LLM.
+
+Add a self-check step: have the system review its own output against the Business Goals before it's final.
+
+Benchmark against a strong classical solver and show exactly where your AI adds value over it — inventory placement is one of the tracks where you're expected to beat a classical baseline, not just approximate it.
+
+WHAT TO DELIVER
+
+A working MVP demonstrating the full user journey for this track
+
+A short tech write-up: architecture diagram, AI workflow, and stack used
+
+Source code in a GitHub repo with setup instructions
+
+A short business pitch: problem, solution, value, rough cost-per-transaction, what's next
+
+A live demo (max 8 minutes): the problem, your solution, a walkthrough, your AI architecture, impact & roadmap
+
+BEFORE YOU BUILD
+
+DATA REALITY CHECK
+
+Indian Store Data (below) gives you real, India-specific sales and inventory numbers — use it directly. Group your agents by whatever real dimension the data has (region, category, or store) instead of inventing a warehouse/FC/dark-store hierarchy no public dataset has. Same multi-agent technique, real numbers throughout.
+
+DATASETS TO GET YOU STARTED
+
+1. Indian Store Data
+
+Kaggle
+
+100K rows, 2019–2023, sales and profit in ₹ — an India-realistic demand signal to drive the placement model. Start here.
+
+2. High-Dimensional Supply Chain Inventory Dataset
+
+Kaggle
+
+SKU sales, inventory levels, supplier lead times and regional dynamics — richer features if you need them once the base model works.

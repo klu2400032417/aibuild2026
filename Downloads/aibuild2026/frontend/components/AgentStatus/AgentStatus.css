@@ -1,0 +1,119 @@
+.agent-status-section {
+  margin-top: 12px;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.title-icon {
+  color: var(--primary);
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.agent-status-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.agent-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 8px;
+}
+
+.agent-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.agent-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.agent-card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.status-icon {
+  display: flex;
+  margin-top: 2px;
+}
+
+.agent-msg {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Status States colors */
+.status-idle {
+  border-left: 3px solid var(--text-muted);
+}
+.status-idle .agent-badge {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.status-completed {
+  border-left: 3px solid var(--success);
+}
+.status-completed .agent-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+.status-completed .status-icon {
+  color: var(--success);
+}
+
+.status-processing {
+  border-left: 3px solid var(--primary);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.1);
+  background: rgba(99, 102, 241, 0.02);
+}
+.status-processing .agent-badge {
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--primary);
+}
+.status-processing .status-icon {
+  color: var(--primary);
+}
+
+.status-failed {
+  border-left: 3px solid var(--danger);
+  background: rgba(239, 68, 68, 0.02);
+}
+.status-failed .agent-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--danger);
+}
+.status-failed .status-icon {
+  color: var(--danger);
+}
+
+/* Spinner Icon */
+.spin-icon {
+  animation: spin 2s linear infinite;
+}
